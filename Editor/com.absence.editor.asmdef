@@ -2,7 +2,9 @@
     "name": "com.absence.editor",
     "rootNamespace": "com.absence.editor",
     "references": [],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
