@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace com.absence.editor.helpers
 {
+    /// <summary>
+    /// Static class that returns the background color in specific states of Unity.
+    /// </summary>
     public static class UnityEditorBackgroundColor
     {
         static readonly Color k_defaultColor = new Color(0.7843f, 0.7843f, 0.7843f);
@@ -33,5 +36,4 @@ namespace com.absence.editor.helpers
         }
 
     }
-
 }

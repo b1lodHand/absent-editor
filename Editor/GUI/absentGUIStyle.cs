@@ -3,12 +3,18 @@ using UnityEngine;
 
 namespace com.absence.editor.gui
 {
+    /// <summary>
+    /// A simple wrapper class for <see cref="GUIStyle"/> with an implicit converter to <see cref="GUIStyle"/>.
+    /// </summary>
     [Serializable]
     public class absentGUIStyle
     {
         [SerializeField] private GUIStyle m_source = null;
         [SerializeField] private Func<GUIStyle> m_provider = null;
 
+        /// <summary>
+        /// The GUIStyle wrapped by this class.
+        /// </summary>
         public GUIStyle source
         {
             get
@@ -23,15 +29,18 @@ namespace com.absence.editor.gui
             }
         }
 
+        /// <summary>
+        /// Use to create a new instance with a provider.
+        /// </summary>
+        /// <param name="sourceProvider">Function to invoke when <see cref="Fetch"/> get called.</param>
         public absentGUIStyle(Func<GUIStyle> sourceProvider)
         {
             m_provider = sourceProvider;
         }
-        public absentGUIStyle()
-        {
-            m_provider = null;
-        }
 
+        /// <summary>
+        /// Use to recreate the <see cref="source"/>.
+        /// </summary>
         public void Fetch()
         {
             source = m_provider?.Invoke();
@@ -39,8 +48,7 @@ namespace com.absence.editor.gui
 
         public static implicit operator GUIStyle(absentGUIStyle style)
         {
-            if (style.source == null) style.Fetch();
-            return style;
+            return style.source;
         }
     }
 }

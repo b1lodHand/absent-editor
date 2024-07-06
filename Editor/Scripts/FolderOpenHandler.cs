@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace com.absence.editor.scripts
 {
-    public class FolderOpenHandler
+    internal class FolderOpenHandler
     {
         [OnOpenAsset]
         public static bool OnOpenAsset(int instanceId)
@@ -23,5 +23,4 @@ namespace com.absence.editor.scripts
             return true;
         }
     }
-
 }

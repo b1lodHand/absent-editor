@@ -8,7 +8,7 @@ using UnityEngine;
 namespace com.absence.editor.scripts
 {
     [InitializeOnLoad]
-    public static class HierarchyIconDisplay
+    internal static class HierarchyIconDisplay
     {
         static bool m_hierarchyHasFocus = false;
         static EditorWindow m_hierarchyEditorWindow;
@@ -59,5 +59,4 @@ namespace com.absence.editor.scripts
             EditorGUI.LabelField(selectionRect, content);
         }
     }
-
 }

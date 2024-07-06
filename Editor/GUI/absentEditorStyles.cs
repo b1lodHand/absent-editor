@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace com.absence.editor.gui
 {
+    /// <summary>
+    /// Static class that holds all of the styles used by <see cref="absentGUI"/> and <see cref="absentGUILayout"/>. Some of the
+    /// styles in this class may throw an error if you try to use them outside a GUI function.
+    /// </summary>
     [InitializeOnLoad]
     public static class absentEditorStyles
     {
@@ -10,16 +14,16 @@ namespace com.absence.editor.gui
         static absentGUIStyle m_header2Style = new(SetupHeader2Style);
         static absentGUIStyle m_header3Style = new(SetupHeader3Style);
 
+        public static GUIStyle Header1Style => m_header1Style.source;
+        public static GUIStyle Header2Style => m_header2Style.source;
+        public static GUIStyle Header3Style => m_header3Style.source;
+
         static absentEditorStyles()
         {
             m_header1Style = new(SetupHeader1Style);
             m_header2Style = new(SetupHeader2Style);
             m_header3Style = new(SetupHeader3Style);
         }
-
-        public static GUIStyle Header1Style => m_header1Style.source;
-        public static GUIStyle Header2Style => m_header2Style.source;
-        public static GUIStyle Header3Style => m_header3Style.source;
 
         #region Internals
         static GUIStyle SetupHeader1Style()

@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace com.absence.editor.internals
 {
+    /// <summary>
+    /// Static class that holds some needed constants for this package.
+    /// </summary>
     public static class Constants
     {
         public const int UNDERLINE_OFFSET = -12;

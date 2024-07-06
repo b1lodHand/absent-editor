@@ -4,7 +4,7 @@ using UnityEngine;
 namespace com.absence.editor.internals
 {
     [FilePath("ProjectSettings/absent-editor-settings.assets", FilePathAttribute.Location.ProjectFolder)]
-    public class PackageSettings : ScriptableSingleton<PackageSettings>
+    internal class PackageSettings : ScriptableSingleton<PackageSettings>
     {
         [SerializeField] private bool m_paintHierarchyScriptIcons = true;
 

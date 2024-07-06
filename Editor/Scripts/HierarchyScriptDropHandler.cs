@@ -4,7 +4,7 @@ using UnityEngine;
 namespace com.absence.editor.scripts
 {
     [InitializeOnLoad]
-    public static class HierarchyScriptDropHandler
+    internal static class HierarchyScriptDropHandler
     {
         static HierarchyScriptDropHandler()
         {
@@ -67,5 +67,4 @@ namespace com.absence.editor.scripts
             return gameObject;
         }
     }
-
 }

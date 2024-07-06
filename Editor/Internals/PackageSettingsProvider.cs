@@ -2,7 +2,7 @@ using UnityEditor;
 
 namespace com.absence.editor.internals
 {
-    public class PackageSettingsProvider : SettingsProvider
+    internal class PackageSettingsProvider : SettingsProvider
     {
         public PackageSettingsProvider(string path, SettingsScope scope) : base(path, scope)
         {
