@@ -1,12 +1,8 @@
 {
-    "name": "com.absence.editor",
-    "rootNamespace": "com.absence.editor",
-    "references": [
-        "GUID:b5c566d8b44a0c446a4b1f6a93cc3923"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "com.absence.editor.runtime",
+    "rootNamespace": "com.absence.editor.runtime",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
