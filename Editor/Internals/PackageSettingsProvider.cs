@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEngine;
 
 namespace com.absence.editor.internals
 {
@@ -12,16 +13,29 @@ namespace com.absence.editor.internals
         {
             base.OnGUI(searchContext);
 
+            PackageSettings settings = PackageSettings.instance;
+            bool fancyIcons = settings.PaintHierarchyScriptIcons;
+
             EditorGUILayout.Space(5);
             EditorGUI.indentLevel++;
 
-            PackageSettings settings = PackageSettings.instance;
-
-            bool fancyIcons = settings.PaintHierarchyScriptIcons;
-            bool fancyIconsNew = EditorGUILayout.Toggle("Paint Hierarchy Script Icons", fancyIcons);
-            if(fancyIcons != fancyIconsNew) settings.PaintHierarchyScriptIcons = fancyIconsNew;
+            DrawFancyIconsToggle();
 
             EditorGUI.indentLevel--;
+
+            return;
+
+            void DrawFancyIconsToggle()
+            {
+                GUIContent content = new()
+                {
+                    text = "Paint Hierarchy Script Icons",
+                    tooltip = "If true, script icons will get displayed instead of grey cubes in the hierarchy window."
+                };
+
+                bool fancyIconsNew = EditorGUILayout.Toggle(content, fancyIcons);
+                if (fancyIcons != fancyIconsNew) settings.PaintHierarchyScriptIcons = fancyIconsNew;
+            }
         }
 
         [SettingsProvider]
